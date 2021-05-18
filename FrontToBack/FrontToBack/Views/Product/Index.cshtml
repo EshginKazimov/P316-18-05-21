@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Product Index";
+    List<Product> products = Model;
+}
+
+<section id="products">
+    <div class="container">
+        <div class="row" id="productList">
+            <input hidden id="productsCount" value="@ViewBag.ProductCount"/>
+            @*<partial name="_ProductPartial"/>*@
+            @await Component.InvokeAsync("Products", 6)
+        </div>
+        <div class="row">
+            <button class="btn btn-info mt-3 mb-3" id="loadMore">Load more...</button>
+        </div>
+    </div>
+</section>
+
